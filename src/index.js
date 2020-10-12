@@ -124,6 +124,12 @@ module.exports = function toReadable(number) {
         }
 
         case 4: {
+
+//            case "1000":
+//                result = "one thousand";
+            if (strNumber.substr(1, 3) === "000")
+                return oneNumber(strNumber[0]) + " thousand";
+
             if (strNumber.substr(2, 2) === "00")
                 return twoNumber(strNumber.substr(0, 2)) + " hundred";
 
